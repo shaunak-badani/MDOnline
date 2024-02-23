@@ -1,0 +1,28 @@
+Creating MDOnline:
+
+Goal:
+Create an app that can run simulations online.
+
+Home page:
+1. Run a simulation
+2. Read some theory
+
+Need a queuing system.
+A page where it shows the list of queued up and completed simulations.
+
+A page to select which system to run it on.
+
+This redirects to a page which tells the app what config you want the simulation to run on. Pass the default parameters in the form.
+
+A backend api that calls the c++ program, with the json file.
+This should create a folder with a unique name, and store the json, and the results of the simulation.
+
+A page that shows the results of the simulation.
+
+What all should the results contain?
+1st: a playable video showing how the simulation works.
+
+Then generative buttons on analysis of data.
+
+A button to download individual files in raw format.
+
