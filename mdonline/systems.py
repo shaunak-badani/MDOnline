@@ -4,7 +4,7 @@ from flask import (
 
 bp = Blueprint('systems', __name__, url_prefix='/systems')
 
-@bp.route('', methods = ['GET', 'POST'])
-def systems_home():
+@bp.route('/', methods = ['GET', 'POST'], strict_slashes = False)
+def home():
     if request.method == 'GET':
         return render_template('systems/home.html')

@@ -3,16 +3,25 @@
   <head>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 <title>{% block title %}{% endblock %}: MDOnline </title>
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<body class="font-mono">
 <header>
-  <nav>
-    <div class="flex flex-row justify-center bg-red-200 px-4 py-4 text-xl font-extralight text-yellow-700 sm:rounded-b-2xl">
-      <a href="/" class="px-4 hover:text-cyan-950">Home</a>
-      <a class="px-4 hover:text-yellow-950">Run a simulation</a>
-      <a href="https://pubmed.ncbi.nlm.nih.gov/36379798/" target="_blank" class="px-4 hover:text-yellow-950">Published paper</a>
+  <div class="bg-black py-3 flex flex-row justify-evenly align-middle sm:rounded-b-2xl" style="height: 10vh">
+    <div class="h-full py-2">
+      <img src="{{ url_for('static', filename='simon-heavybold.png') }}" class="h-full"/>
     </div>
-  </nav>
+    <nav>
+      <div class="flex flex-row items-center h-full text-2xl font-semibold text-white ">
+        <a href="/" class="px-4 hover:text-gray-400">Home</a>
+        <a href="{{ url_for('systems.home')}}" class="px-4 hover:text-gray-400">Run a simulation</a>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/36379798/" target="_blank" class="px-4 hover:text-gray-400">Published paper</a>
+      </div>
+    </nav>
+    <div class="my-auto text-white">
+      Info tag
+    </div>
+  </div>
 </header>
 <section class="content">
   {% for message in get_flashed_messages() %}
@@ -20,5 +29,6 @@
   {% endfor %}
   {% block content %}{% endblock %}
 </section>
+</body>
 </html>
 

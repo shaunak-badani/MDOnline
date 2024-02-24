@@ -21,5 +21,6 @@ def create_app(test_config = None):
         pass
     
     app.register_blueprint(home.bp)
+    app.register_blueprint(systems.bp)
 
     return app
